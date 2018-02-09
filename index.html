@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script src="https://cdn.bootcss.com/socket.io/2.0.4/socket.io.slim.js"></script>
+<script>
+    var socket = io.connect('http://localhost:3000');
+    socket.on('news',data=>{
+        console.log(data);
+        socket.emit('my_other_event',{my:'data'});
+    });
+</script>
+</html>
